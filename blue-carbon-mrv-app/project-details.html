@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Blue Carbon MRV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="project-details-screen" class="screen" style="display: block;">
+        <header class="app-header">
+            <div class="header-content"><a href="dashboard.html" class="back-btn" style="text-decoration: none;">← Back</a><h2 id="project-title">Project Details</h2></div>
+        </header>
+        <main class="project-details-content">
+            <div class="project-info-card card"><div class="card__body"><h3 id="project-name"></h3><p id="project-description"></p><div class="project-metrics"><div class="metric"><span class="metric-label">Location:</span><span class="metric-value" id="project-location"></span></div><div class="metric"><span class="metric-label">Target Area:</span><span class="metric-value" id="project-target-area"></span></div></div><div class="progress-section"><div class="progress-header"><span id="progress-text"></span><span id="progress-percentage"></span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div></div></div>
+            <div class="map-section card"><div class="card__body"><h3>Project Boundaries</h3><div class="map-placeholder"><div class="map-content"><p>🗺️ Map</p></div></div></div></div>
+            <div class="evidence-history card"><div class="card__body"><h3>Evidence History</h3><div class="evidence-list" id="evidence-list"></div></div></div>
+        </main>
+        <button class="fab" id="submit-evidence-fab">+ Submit New Evidence</button>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/project-details.js"></script>
+</body>
+</html>

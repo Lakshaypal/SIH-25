@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Evidence - Blue Carbon MRV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="evidence-submission-screen" class="screen" style="display: block;">
+        <header class="app-header">
+            <div class="header-content"><button class="back-btn" id="back-to-project">← Back</button><h2>Submit New Evidence</h2></div>
+        </header>
+        <main class="evidence-form-content">
+            <div class="photo-section card"><div class="card__body"><button class="photo-btn" id="take-photo-btn">📷 Take Photo</button><div class="photo-preview hidden" id="photo-preview"><img id="preview-image" alt="Preview"><button class="retake-btn" id="retake-btn">Retake</button></div></div></div>
+            <div class="notes-section card"><div class="card__body"><label class="form-label" for="evidence-notes">Additional Notes</label><textarea class="form-control" id="evidence-notes" rows="4"></textarea></div></div>
+            <button class="btn btn--primary btn--lg btn--full-width" id="submit-evidence-btn">Submit for Verification</button>
+        </main>
+        <div id="loading-modal" class="modal hidden"><div class="modal-overlay"></div><div class="modal-content loading-content"><div class="loading-spinner"></div><p>Submitting evidence...</p></div></div>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/submit-evidence.js"></script>
+</body>
+</html>

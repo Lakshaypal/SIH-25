@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Blue Carbon MRV</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="dashboard-screen" class="screen" style="display: block;">
+        <header class="app-header">
+            <div class="header-content">
+                <h2>Dashboard</h2>
+                <div class="header-actions">
+                    <button class="notification-btn" id="notification-btn">🔔<span class="notification-badge" id="notification-badge"></span></button>
+                    <div class="profile-icon">👤</div>
+                </div>
+            </div>
+        </header>
+        <div id="notifications-panel" class="notifications-panel hidden">
+            <div class="notifications-header"><h3>Notifications</h3><button class="close-notifications">✕</button></div>
+            <div class="notifications-list" id="notifications-list"></div>
+        </div>
+        <main class="dashboard-content"><div class="projects-grid" id="projects-grid"></div></main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
