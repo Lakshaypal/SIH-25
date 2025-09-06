@@ -3,322 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueCarbon MRV - Carbon Monitoring & Verification</title>
+    <title>Welcome - BlueCarbon MRV</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <!-- Header - Hidden initially, shown after login -->
-        <header class="app-header hidden" id="app-header">
-            <div class="container">
-                <div class="flex items-center justify-between">
-                    <button class="app-title-btn" id="header-logo">
-                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/9f2bf083-2590-4001-bddf-37efeca417b9.png" alt="BlueCarbon MRV" class="app-logo">
-                        <h1 class="app-title">BlueCarbon MRV</h1>
-                    </button>
-                    <button class="btn btn--outline btn--sm translate-btn">🌐 EN</button>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/9f2bf083-2590-4001-bddf-37efeca417b9.png" alt="BlueCarbon Logo" class="auth-logo">
+            <h1>Welcome Back</h1>
+            <p>Please enter your details to sign in.</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
                 </div>
-            </div>
-        </header>
-
-        <!-- Login/Signup Page - DEFAULT VISIBLE -->
-        <div class="page active" id="auth-page">
-            <div class="auth-container">
-                <div class="auth-card card">
-                    <div class="auth-header">
-                        <div class="auth-logo">
-                            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/9f2bf083-2590-4001-bddf-37efeca417b9.png" alt="BlueCarbon MRV" class="auth-logo-img">
-                        </div>
-                        <h1 class="auth-hello">HELLO</h1>
-                        <div class="auth-tabs">
-                            <button class="auth-tab active" data-tab="login">Sign In</button>
-                            <button class="auth-tab" data-tab="signup">Sign Up</button>
-                        </div>
-                    </div>
-
-                    <!-- Login Form -->
-                    <form class="auth-form" id="login-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--full-width auth-submit-btn">
-                            Sign In
-                        </button>
-                        <p class="auth-switch">
-                            Don't have an account? <a href="#" data-switch="signup">Sign Up</a>
-                        </p>
-                    </form>
-
-                    <!-- Signup Form -->
-                    <form class="auth-form hidden" id="signup-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Organization" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--full-width auth-submit-btn">
-                            Sign Up
-                        </button>
-                        <p class="auth-switch">
-                            Already have an account? <a href="#" data-switch="login">Sign In</a>
-                        </p>
-                    </form>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
                 </div>
-            </div>
+                <button type="submit" class="btn btn--primary">Sign In</button>
+            </form>
         </div>
-
-        <!-- Dashboard Page - HIDDEN by default -->
-        <div class="page" id="dashboard-page">
-            <div class="container">
-                <div class="page-content">
-                    <div class="welcome-section">
-                        <h2 class="welcome-title">Welcome back, <span id="user-name">John</span>!</h2>
-                        <div class="kyc-notification">
-                            <span class="status status--warning">⚠️ KYC Pending</span>
-                            <span class="kyc-text">Complete your verification to unlock all features</span>
-                        </div>
-                    </div>
-
-                    <div class="data-overview">
-                        <h3 class="section-title">Data Overview</h3>
-                        <div class="stats-grid">
-                            <div class="stat-card card">
-                                <div class="stat-icon">📊</div>
-                                <div class="stat-number">0</div>
-                                <div class="stat-label">Active Projects</div>
-                            </div>
-                            <div class="stat-card card">
-                                <div class="stat-icon">🌿</div>
-                                <div class="stat-number">0</div>
-                                <div class="stat-label">Carbon Credits</div>
-                            </div>
-                            <div class="stat-card card">
-                                <div class="stat-icon">✅</div>
-                                <div class="stat-number">0</div>
-                                <div class="stat-label">Verified Reports</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="quick-actions">
-                        <h3 class="section-title">Quick Actions</h3>
-                        <div class="actions-grid">
-                            <button class="btn btn--primary action-btn" data-navigate="create">
-                                ➕ Create New Project
-                            </button>
-                            <button class="btn btn--secondary action-btn" data-navigate="projects">
-                                📁 View All Projects
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projects Page - HIDDEN by default -->
-        <div class="page" id="projects-page">
-            <div class="container">
-                <div class="page-content">
-                    <div class="page-header">
-                        <h2 class="page-title">My Projects</h2>
-                        <button class="btn btn--primary btn--sm" data-navigate="create">+ Add Project</button>
-                    </div>
-                    
-                    <div class="empty-state">
-                        <div class="empty-icon">📁</div>
-                        <h3 class="empty-title">No Projects Yet</h3>
-                        <p class="empty-description">
-                            Start creating your first Blue Carbon project to begin monitoring and verification
-                        </p>
-                        <button class="btn btn--primary" data-navigate="create">Create Project</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Create Project Page - HIDDEN by default -->
-        <div class="page" id="create-page">
-            <div class="container">
-                <div class="page-content">
-                    <div class="page-header">
-                        <h2 class="page-title">Create New Project</h2>
-                        <p class="page-subtitle">Submit your carbon credit project for review</p>
-                    </div>
-
-                    <form class="create-form" id="create-project-form">
-                        <div class="form-section">
-                            <h3 class="form-section-title">Project Information</h3>
-                            <div class="form-group">
-                                <label class="form-label">Project Name *</label>
-                                <input type="text" class="form-control" placeholder="e.g. Amazon Rainforest Preservation" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Organization/NGO Name *</label>
-                                <input type="text" class="form-control" placeholder="Your organization's name" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Location *</label>
-                                <input type="text" class="form-control" placeholder="e.g. Brazil, Amazon Basin" required>
-                            </div>
-                        </div>
-
-                        <div class="form-section">
-                            <h3 class="form-section-title">Document Uploads</h3>
-                            <div class="uploads-grid">
-                                <div class="upload-item">
-                                    <div class="upload-zone" data-doc="aadhar">
-                                        <div class="upload-icon">📄</div>
-                                        <p class="upload-text">Aadhar Card</p>
-                                        <span class="upload-status">Click to upload</span>
-                                    </div>
-                                </div>
-                                <div class="upload-item">
-                                    <div class="upload-zone" data-doc="pan">
-                                        <div class="upload-icon">📄</div>
-                                        <p class="upload-text">PAN Card</p>
-                                        <span class="upload-status">Click to upload</span>
-                                    </div>
-                                </div>
-                                <div class="upload-item">
-                                    <div class="upload-zone" data-doc="ngo">
-                                        <div class="upload-icon">📄</div>
-                                        <p class="upload-text">NGO UID Certificate</p>
-                                        <span class="upload-status">Click to upload</span>
-                                    </div>
-                                </div>
-                                <div class="upload-item">
-                                    <div class="upload-zone" data-doc="gst">
-                                        <div class="upload-icon">📄</div>
-                                        <p class="upload-text">GST Certificate</p>
-                                        <span class="upload-status">Click to upload</span>
-                                    </div>
-                                </div>
-                                <div class="upload-item">
-                                    <div class="upload-zone" data-doc="ekyc">
-                                        <div class="upload-icon">📄</div>
-                                        <p class="upload-text">eKYC</p>
-                                        <span class="upload-status">Click to upload</span>
-                                    </div>
-                                </div>
-                                <div class="upload-item">
-                                    <div class="upload-zone" data-doc="geotag">
-                                        <div class="upload-icon">📄</div>
-                                        <p class="upload-text">Geotag Pic of NGO</p>
-                                        <span class="upload-status">Click to upload</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn--primary btn--lg btn--full-width">
-                            Submit Project
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Profile Page - HIDDEN by default -->
-        <div class="page" id="profile-page">
-            <div class="container">
-                <div class="page-content">
-                    <div class="profile-header">
-                        <div class="profile-avatar">
-                            <div class="avatar-placeholder">👤</div>
-                        </div>
-                        <div class="profile-info">
-                            <h2 class="profile-name" id="profile-name">John Doe</h2>
-                            <p class="profile-email" id="profile-email">john.doe@email.com</p>
-                            <span class="status status--warning">KYC Pending</span>
-                        </div>
-                        <button class="btn btn--outline edit-profile-btn">Edit Profile</button>
-                    </div>
-
-                    <div class="profile-details">
-                        <div class="profile-section">
-                            <h3 class="section-title">Personal Information</h3>
-                            <div class="details-grid">
-                                <div class="detail-item">
-                                    <label class="detail-label">Phone Number</label>
-                                    <p class="detail-value" id="profile-phone">+1 (555) 123-4567</p>
-                                </div>
-                                <div class="detail-item">
-                                    <label class="detail-label">Address</label>
-                                    <p class="detail-value" id="profile-address">123 Green Street, Eco City, EC 12345</p>
-                                </div>
-                                <div class="detail-item">
-                                    <label class="detail-label">Organization</label>
-                                    <p class="detail-value" id="profile-organization">EcoTech Solutions</p>
-                                </div>
-                                <div class="detail-item">
-                                    <label class="detail-label">Member Since</label>
-                                    <p class="detail-value" id="profile-member-since">September 2025</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="profile-section">
-                            <h3 class="section-title">Settings</h3>
-                            <div class="settings-list">
-                                <div class="setting-item">
-                                    <span class="setting-label">🔔 Notifications</span>
-                                    <span class="setting-value">Enabled</span>
-                                </div>
-                                <div class="setting-item">
-                                    <span class="setting-label">🌍 Language</span>
-                                    <span class="setting-value">English</span>
-                                </div>
-                                <div class="setting-item">
-                                    <span class="setting-label">🔐 Privacy</span>
-                                    <span class="setting-value">Standard</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Navigation - HIDDEN initially, shown after login -->
-        <nav class="bottom-nav hidden" id="bottom-nav">
-            <button class="nav-item active" data-page="dashboard">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Dashboard</span>
-            </button>
-            <button class="nav-item" data-page="projects">
-                <span class="nav-icon">📁</span>
-                <span class="nav-label">Projects</span>
-            </button>
-            <button class="nav-item" data-page="create">
-                <span class="nav-icon">➕</span>
-                <span class="nav-label">Create</span>
-            </button>
-            <button class="nav-item" data-page="profile">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Profile</span>
-            </button>
-        </nav>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        // Simple login simulation
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            // In a real application, you would validate credentials here
+            // For this demo, we'll just redirect to the dashboard
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+
 </body>
 </html>

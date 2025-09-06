@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-R-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BlueCarbon MRV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="page-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="welcome-message">
+                <h1>Welcome back,</h1>
+                <p>Let's check your project status.</p>
+            </div>
+            <a href="profile.html" class="profile-icon">
+                JD
+            </a>
+        </header>
+
+        <!-- KYC Pending Banner -->
+        <div class="kyc-banner card-accent">
+            <div class="kyc-banner__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 5.83398V10.0007M10 14.1673H10.0083M18.3333 10.0007C18.3333 14.6031 14.6024 18.334 10 18.334C5.39763 18.334 1.66667 14.6031 1.66667 10.0007C1.66667 5.39827 5.39763 1.66732 10 1.66732C14.6024 1.66732 18.3333 5.39827 18.3333 10.0007Z" stroke="#F79009" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="kyc-banner__text">
+                <h3>KYC Pending</h3>
+                <p>Your documents are being reviewed.</p>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <section>
+            <div class="stats-grid">
+                <!-- Total Projects -->
+                <div class="stat-card card-accent total">
+                    <div class="stat-card__header">
+                        <div class="stat-card__icon icon-total">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7V4H20V7L12 11L4 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 11V20H20V11L12 15L4 11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="stat-card__title">Total Projects</h3>
+                    </div>
+                    <p class="stat-card__value">0</p>
+                </div>
+                <!-- Submitted -->
+                <div class="stat-card card-accent submitted">
+                    <div class="stat-card__header">
+                        <div class="stat-card__icon icon-submitted">
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 16L7 11H10V8H14V11H17L12 16Z" fill="currentColor"/></svg>
+                        </div>
+                        <h3 class="stat-card__title">Submitted</h3>
+                    </div>
+                    <p class="stat-card__value">0</p>
+                </div>
+                <!-- Under Review -->
+                <div class="stat-card card-accent review">
+                    <div class="stat-card__header">
+                        <div class="stat-card__icon icon-review">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6V12L16 14M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="stat-card__title">Under Review</h3>
+                    </div>
+                    <p class="stat-card__value">0</p>
+                </div>
+                 <!-- Approved -->
+                <div class="stat-card card-accent approved">
+                    <div class="stat-card__header">
+                        <div class="stat-card__icon icon-approved">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="stat-card__title">Approved</h3>
+                    </div>
+                    <p class="stat-card__value">0</p>
+                </div>
+                <!-- Rejected -->
+                <div class="stat-card card-accent rejected">
+                    <div class="stat-card__header">
+                        <div class="stat-card__icon icon-rejected">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="stat-card__title">Rejected</h3>
+                    </div>
+                    <p class="stat-card__value">0</p>
+                </div>
+                 <!-- Total Credits -->
+                <div class="stat-card card-accent credits">
+                    <div class="stat-card__header">
+                        <div class="stat-card__icon icon-credits">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="stat-card__title">Total Credits</h3>
+                    </div>
+                    <p class="stat-card__value">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section>
+            <h2 class="section-title">Quick Actions</h2>
+            <div class="actions-list">
+                <a href="create.html" class="card-accent">
+                    <div class="action-item__icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4.16602V15.8327M4.16667 9.99935H15.8333" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="action-item__text">
+                        <h3>Create New Project</h3>
+                        <p>Start a new carbon credit project.</p>
+                    </div>
+                    <div class="action-item__arrow">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </a>
+                <a href="projects.html" class="card-accent">
+                    <div class="action-item__icon">
+                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.83333 2.5H14.1667C14.6269 2.5 15 2.8731 15 3.33333V16.6667C15 17.1269 14.6269 17.5 14.1667 17.5H5.83333C5.3731 17.5 5 17.1269 5 16.6667V3.33333C5 2.8731 5.3731 2.5 5.83333 2.5Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.33331 5.83398H11.6666" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.33331 9.16602H11.6666" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div class="action-item__text">
+                        <h3>View All Projects</h3>
+                        <p>See the status of all your projects.</p>
+                    </div>
+                    <div class="action-item__arrow">
+                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <!-- Dashboard Link -->
+        <a href="dashboard.html" class="nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Dashboard</span>
+        </a>
+        <!-- Projects Link -->
+        <a href="projects.html" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19V5C2 3.89543 2.89543 3 4 3H10L12 5H20C21.1046 5 22 5.89543 22 7V19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Projects</span>
+        </a>
+        <!-- Create Link -->
+        <a href="create.html" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9V15M9 12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Create</span>
+        </a>
+        <!-- Profile Link -->
+        <a href="profile.html" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Profile</span>
+        </a>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
