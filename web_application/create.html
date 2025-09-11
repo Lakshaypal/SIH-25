@@ -31,7 +31,7 @@
         .file-input-label:hover { background-color: #e2e8f0; }
         #fileInput { display: none; }
         #fileName { margin-top: 10px; font-size: 14px; color: #64748b; }
-        .btn-upload.uploaded { background-color: #22c55e; color: white; }
+        .btn-upload.uploaded { background-color: #22c55e; color: white; border-color: #22c55e !important; }
 
         /* Elevation Section Styles */
         .elevation-grid {
@@ -101,12 +101,12 @@
                 <h2 class="form-section-title">Document Uploads</h2>
                 <p class="form-section-subtitle">Please upload the required documents for KYC verification.</p>
                 <div class="upload-grid">
-                    <div class="upload-item"><span class="upload-icon">📄</span><p class="upload-title">Aadhar Card</p><button type="button" class="btn-upload">Upload</button></div>
-                    <div class="upload-item"><span class="upload-icon">📄</span><p class="upload-title">PAN Card</p><button type="button" class="btn-upload">Upload</button></div>
-                    <div class="upload-item"><span class="upload-icon">📄</span><p class="upload-title">NGO UID Certificate</p><button type="button" class="btn-upload">Upload</button></div>
-                    <div class="upload-item"><span class="upload-icon">📄</span><p class="upload-title">GST Certificate</p><button type="button" class="btn-upload">Upload</button></div>
-                    <div class="upload-item"><span class="upload-icon">📄</span><p class="upload-title">eKYC Video</p><button type="button" class="btn-upload">Upload</button></div>
-                    <div class="upload-item"><span class="upload-icon">📄</span><p class="upload-title">Geotag Pic of NGO</p><button type="button" class="btn-upload">Upload</button></div>
+                    <div class="upload-item" data-doc="Aadhar Card"><span class="upload-icon">📄</span><p class="upload-title">Aadhar Card</p><button type="button" class="btn-upload">Upload</button></div>
+                    <div class="upload-item" data-doc="PAN Card"><span class="upload-icon">📄</span><p class="upload-title">PAN Card</p><button type="button" class="btn-upload">Upload</button></div>
+                    <div class="upload-item" data-doc="NGO UID Certificate"><span class="upload-icon">📄</span><p class="upload-title">NGO UID Certificate</p><button type="button" class="btn-upload">Upload</button></div>
+                    <div class="upload-item" data-doc="GST Certificate"><span class="upload-icon">📄</span><p class="upload-title">GST Certificate</p><button type="button" class="btn-upload">Upload</button></div>
+                    <div class="upload-item" data-doc="eKYC Video"><span class="upload-icon">📄</span><p class="upload-title">eKYC Video</p><button type="button" class="btn-upload">Upload</button></div>
+                    <div class="upload-item" data-doc="Geotag Pic of NGO"><span class="upload-icon">📄</span><p class="upload-title">Geotag Pic of NGO</p><button type="button" class="btn-upload">Upload</button></div>
                 </div>
             </div>
 
@@ -127,7 +127,15 @@
     
     <!-- MODAL DIALOG HTML -->
     <div id="uploadModal" class="modal-overlay">
-        <!-- Modal content... -->
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 id="modalTitle">Upload Document</h3>
+            <p>Please select a file to upload.</p>
+            <label for="fileInput" class="file-input-label">Choose File</label>
+            <input type="file" id="fileInput">
+            <p id="fileName"></p>
+            <button id="confirmUploadBtn" class="btn btn--primary" style="margin-top: 20px;">Upload File</button>
+        </div>
     </div>
 
     <!-- Bottom Navigation -->
@@ -135,25 +143,46 @@
         <!-- Nav items... -->
     </nav>
 
-    <!-- Project-specific script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // ... (previous modal and elevation scripts)
-        });
-    </script>
+    <!-- App Logic Script -->
+    <script src="app.js" defer></script>
     
     <!-- === GOOGLE MAPS SCRIPT START === -->
     <!-- This function must be in the global scope to be used as a callback -->
     <script>
         function initMap() {
+            const defaultCenter = { lat: 20.5937, lng: 78.9629 }; // Center of India
             const mapOptions = {
-                center: { lat: 20.5937, lng: 78.9629 }, // Center of India
+                center: defaultCenter,
                 zoom: 5,
                 mapTypeId: 'satellite',
                 mapTypeControl: false,
                 streetViewControl: false
             };
             const map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        map.setCenter(pos);
+                        map.setZoom(12);
+                        new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            title: "Your Location",
+                        });
+                    },
+                    () => {
+                        console.log("Geolocation service failed. Using default location.");
+                    }
+                );
+            } else {
+                console.log("Browser doesn't support Geolocation.");
+            }
 
             const drawingManager = new google.maps.drawing.DrawingManager({
                 drawingMode: google.maps.drawing.OverlayType.POLYGON,
