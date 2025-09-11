@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - BlueCarbon MRV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #f7f9fc;">
+
+    <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 20px;">
+        <div style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); width: 100%; max-width: 450px; text-align: center; box-sizing: border-box;">
+            
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/9f2bf083-2590-4001-bddf-37efeca417b9.png" alt="BlueCarbon Logo" style="width: 60px; margin-bottom: 24px;">
+            
+            <h1 style="font-size: 24px; font-weight: 600; color: #1e293b; margin: 0 0 8px 0;">Create an Account</h1>
+            <p style="font-size: 14px; color: #64748b; margin: 0 0 32px 0;">Let's get you started with BlueCarbon MRV.</p>
+
+            <form id="signupForm" style="text-align: left;">
+                <!-- Full Name -->
+                <div style="margin-bottom: 16px;">
+                    <label for="fullName" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Full Name (Authorized Person)</label>
+                    <input type="text" id="fullName" placeholder="John Doe" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+
+                <!-- Organization Name -->
+                <div style="margin-bottom: 16px;">
+                    <label for="organization" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Name of Organization</label>
+                    <input type="text" id="organization" placeholder="Your Company Inc." required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+
+                <!-- NGO UID -->
+                <div style="margin-bottom: 16px;">
+                    <label for="ngoUid" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">NGO Unique ID (UID)</label>
+                    <input type="text" id="ngoUid" placeholder="e.g., MH/2023/123456" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+
+                <!-- Phone Number -->
+                <div style="margin-bottom: 16px;">
+                    <label for="phone" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="9876543210" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+                
+                <!-- Email Address -->
+                <div style="margin-bottom: 16px;">
+                    <label for="email" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+
+                <!-- GST Number -->
+                <div style="margin-bottom: 16px;">
+                    <label for="gstNumber" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">GST Number</label>
+                    <input type="text" id="gstNumber" placeholder="12ABCDE1234F1Z5" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif; text-transform: uppercase;">
+                </div>
+
+                <!-- PAN Number -->
+                <div style="margin-bottom: 16px;">
+                    <label for="panNumber" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">PAN Number</label>
+                    <input type="text" id="panNumber" placeholder="ABCDE1234F" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif; text-transform: uppercase;">
+                </div>
+
+                <!-- Aadhar Number -->
+                <div style="margin-bottom: 16px;">
+                    <label for="aadharNumber" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Aadhar Number (Authorized Person)</label>
+                    <input type="text" id="aadharNumber" placeholder="1234 5678 9012" required pattern="\d{12}" title="Please enter a valid 12-digit Aadhar number" style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+
+                <!-- NGO KYC Document -->
+                <div style="margin-bottom: 16px;">
+                    <label for="kycFile" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Upload NGO KYC Document</label>
+                    <input type="file" id="kycFile" required accept=".pdf,.jpg,.jpeg,.png" style="width: 100%; padding: 8px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+                
+                <!-- Password -->
+                <div style="margin-bottom: 16px;">
+                    <label for="password" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+
+                <!-- Confirm Password -->
+                <div style="margin-bottom: 24px;">
+                    <label for="confirmPassword" style="display: block; font-size: 14px; font-weight: 500; color: #334155; margin-bottom: 6px;">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="••••••••" required style="width: 100%; padding: 10px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                </div>
+                
+                <button type="submit" style="width: 100%; padding: 12px; background-color: #0052ff; color: #ffffff; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif;">Create Account</button>
+            </form>
+
+            <div style="text-align: center; margin-top: 24px; font-size: 14px; color: #64748b;">
+                Already have an account? 
+                <a href="login.html" style="color: #0052ff; text-decoration: none; font-weight: 600;">Sign in</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Simple signup simulation
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            // In a real application, you would send the data to a server here.
+            // For this demo, we'll just show an alert and redirect.
+            alert('Account created successfully! Your application will be reviewed.');
+            window.location.href = 'dashboard.html'; // Redirect to the dashboard after successful signup
+        });
+    </script>
+
+</body>
+</html>
