@@ -1,4 +1,4 @@
-# Blue Carbon Registry — Hobby Prototype (SIH 2025)
+# Blue Carbon Registry Sandbox — Hobby Prototype
 
 A hobby/hackathon prototype exploring how blue-carbon projects, carbon-credit pools and project verification could be presented in a web interface.
 
@@ -14,8 +14,8 @@ The React dashboard uses sample pool/project figures. Several navigation destina
 Use Node.js 20.19+ or 22.12+ and npm:
 
 ```sh
-git clone https://github.com/Lakshaypal/hobby-blue-carbon-registry.git
-cd hobby-blue-carbon-registry/blue-carbon-registry
+git clone https://github.com/Lakshaypal/Blue-Carbon-Registry-Sandbox.git
+cd Blue-Carbon-Registry-Sandbox/blue-carbon-registry
 npm ci
 npm run dev
 ```
